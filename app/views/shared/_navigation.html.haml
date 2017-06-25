@@ -1,0 +1,13 @@
+.navbar.navbar-default.navbar-static-top
+  .container
+    %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand(href="#") Fitness Buffs
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav
+        %li= link_to "Home", root_path
+        %li= link_to "Sign in", new_user_session_path
+        %li= link_to "Sign up", new_user_registration_path
+        %li= link_to "Link 3", "/path3"
