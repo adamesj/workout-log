@@ -1,0 +1,20 @@
+#homepage_header {
+  background: linear-gradient(rgba(202,228,219, 0.25), rgba(202,228,219, 0.25)),
+                rgba(202,228,219, 0.25) url("/assets/homepage_hdr.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 615px;
+  width: 100%;
+  position: absolute;
+  bottom: 65px;
+}
+
+#title {
+  width: 100%;
+  display: block;
+  text-align:center;
+  position: relative;
+  top: 200px;
+}
