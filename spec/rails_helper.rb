@@ -33,6 +33,14 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
+  config.backtrace_exclusion_patterns = [
+    /\/lib\d*\/ruby\//,
+    /bin\//,
+    /gems/,
+    /spec\/spec_helper\.rb/,
+    /lib\/rspec\/core|expectations|matchers|mocks)/
+  ]
+
   config.before(:all) do
     DatabaseCleaner.strategy = :truncation
   end
