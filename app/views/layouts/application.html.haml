@@ -8,13 +8,10 @@
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
-    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
 
   %body
     = render 'shared/navigation'
-    - flash.each do |key, value|
-      %div{:class => flash_class(key)}
-        = value
+    = render 'shared/flash_messages'
     = yield
     %footer
       %p &copy; Company 2017
