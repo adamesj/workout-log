@@ -8,6 +8,17 @@
   border-color: transparent;
 }
 
+.navbar-default .navbar-brand {
+  color: #fff;
+  border: 1px solid #fff;
+  margin: 5px 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  margin: 5px 0;
+}
+
 /* Footer */
 
 footer {
