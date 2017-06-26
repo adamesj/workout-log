@@ -1,0 +1,21 @@
+.col-xs-12.col-md-10.col-md-offset-1
+  %div
+    %h2{:class => "show_header>Showing #{"#{@exercise.user.full_name}'s Workout Details"}"}
+  .col-xs-12.col-md-10.well.member
+    .col-xs-4
+      %strong
+        Duration (min):
+    .col-xs-8.text-right
+      = @exercise.duration
+  .col-xs-12.col-md-10.well.member
+    .col-xs-4
+      %strong
+        Workout details:
+    .col-xs-8.text-right
+      = truncate(@exercise.workout_details, length: 50)
+  .col-xs-12.col-md-10.well.member
+    .col-xs-4
+      %strong
+        Activity Date:
+    .col-xs-8.text-right
+      = @exercise.activity_date

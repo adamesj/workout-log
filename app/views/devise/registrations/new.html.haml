@@ -7,6 +7,18 @@
         .row
           .col-md-6.col-md-offset-3
             .field
+              = f.label :first_name
+              %br/
+              = f.email_field :first_name, autofocus: true, class: "form-control"
+        .row
+          .col-md-6.col-md-offset-3
+            .field
+              = f.label :last_name
+              %br/
+              = f.email_field :last_name, autofocus: true, class: "form-control"
+        .row
+          .col-md-6.col-md-offset-3
+            .field
               = f.label :email
               %br/
               = f.email_field :email, autofocus: true, class: "form-control"

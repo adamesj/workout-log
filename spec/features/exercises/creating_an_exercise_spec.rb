@@ -13,8 +13,10 @@ RSpec.feature "Create a new exercise" do
     expect(page).to have_link("Back")
 
     fill_in "Duration", with: 90
-    fill_in "Workout Details", with: "Pushups and situps"
-    fill_in "Activity date", with: "2017-06-20"
+    fill_in "exercise[workout_details]", with: "Pushups and situps"
+    select '2017', :from => 'exercise[activity_date(1i)]'
+    select 'June', :from => 'exercise[activity_date(2i)]'
+    select '21', :from => 'exercise[activity_date(3i)]'
     click_button "Create Exercise"
 
     expect(page).to have_content("Way to go! You've added a new exercise!")
