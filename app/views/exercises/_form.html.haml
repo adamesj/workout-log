@@ -1,0 +1,12 @@
+= form_for [current_user, @exercise], html: {class: "form-horizontal", role: "form"} do |f|
+  = f.label :duration
+  = f.number_field :duration, class: "form-control"
+  %br/
+  = f.label :workout_details
+  = f.text_area :workout_details, class: "form-control"
+  %br/
+  = f.label :activity_date
+  = f.date_select :activity_date
+  %br/
+  = f.submit class: "btn btn-default"
+  = link_to 'Back', user_exercises_path(current_user), class: "btn btn-default link", id: "new_exercise_btn"
