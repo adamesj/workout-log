@@ -17,7 +17,7 @@
   = f.text_area :workout_details, class: "form-control"
   %br/
   = f.label :activity_date
-  = f.date_field :activity_date, class: "form-control"
+  = f.text_field :activity_date, placeholder: 'yyyy/mm/dd', class: "form-control datepicker"
   %br/
   = f.submit class: "btn btn-default"
   = link_to 'Back', user_exercises_path(current_user), class: "btn btn-default link", id: "new_exercise_btn"

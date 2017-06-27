@@ -1,7 +1,9 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap';
+@import 'bootstrap-sprockets';
 @import 'variables';
-@import 'main';
 @import 'homepage';
-@import 'flash';
+@import 'datepicker';
 @import 'devise';
+@import 'exercises';
+@import 'flash';
+@import 'main';
