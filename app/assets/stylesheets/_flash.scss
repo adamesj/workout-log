@@ -1,53 +1,101 @@
+/* Flash messages */
+
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
   li {
     list-style: none;
   }
- }
+}
 
 .alert-alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
   li {
     list-style: none;
   }
- }
+}
 
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
   li {
     list-style: none;
   }
- }
+}
 
 .alert-notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
   li {
     list-style: none;
   }
- }
+}
 
- .field_with_errors {
+.alert-article {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  li {
+    list-style: none;
+  }
+}
+
+/* Input field highlighting */
+
+.field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+/* Validation errors */
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
 }
