@@ -28,6 +28,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'launchy'
   gem 'factory_girl_rails'
   gem 'faker', '~> 1.7', '>= 1.7.3'
   gem 'selenium-webdriver', '~> 3.4', '>= 3.4.3'
