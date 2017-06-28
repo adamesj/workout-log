@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def show
+    @members = User.all
+
     if valid_page?
       render template: "pages/#{params[:page]}"
     else
