@@ -16,8 +16,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem "haml-rails", "~> 0.9"
+gem 'haml-rails', '~> 0.9'
 gem 'devise'
+gem 'd3-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
