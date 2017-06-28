@@ -1,15 +1,23 @@
 .container
-  = link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success"
-
-  %table.table
-    %thead
-      %tr
-        %th Duration of workout
-        %th Workout Details
-        %th Date of Exercise
-    %tbody
-      - @exercises.each do |exercise|
+  - if current_user.exercises.present?
+    %table.table
+      %thead
         %tr
-          %td= exercise.duration
-          %td= exercise.workout_details
-          %td= exercise.activity_date
+          %th Duration of workout
+          %th Workout Details
+          %th Date of Exercise
+      %tbody
+        - @exercises.each do |exercise|
+          %tr
+            %td= exercise.duration
+            %td= truncate(exercise.workout_details, length: 100)
+            %td= exercise.activity_date
+            %td= link_to 'Show', [current_user, exercise]
+            %td= link_to 'Edit', [:edit, current_user, exercise]
+            %td= link_to 'Delete', [current_user, exercise], method: :delete, data: { confirm: 'Are you sure?' }
+  - else
+    .alert.alert-danger.message-font.text-center
+      No workouts logged
+    = link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success"
+
+  = content_tag :div, "", id: "chart", data: { workouts: @exercises }
