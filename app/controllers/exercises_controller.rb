@@ -3,7 +3,11 @@ class ExercisesController < ApplicationController
 
 
   def index
-    @exercises = current_user.exercises.all
+    @exercises = current_user.exercises
+    if @exercises.empty?
+      flash[:notice] = "No Workouts Yet"
+    end
+    @friends = current_user.friends
   end
 
   def show

@@ -38,4 +38,8 @@ class User < ApplicationRecord
     # then check if the new_friend passed is included in the list
     # or test if the current user is a new friend
   end
+
+  def current_friendship(friend)
+    friendships.where(friend: friend).first
+  end
 end
