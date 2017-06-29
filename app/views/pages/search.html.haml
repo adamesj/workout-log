@@ -1,0 +1,8 @@
+.container
+  %h1
+    Search Results
+  .row.search-result
+    = @members.each do |member|
+      .col-md-10.col-md-offset-2.well.member
+        = member.full_name
+  = will_paginate @members, renderer: BootstrapPagination::Rails
