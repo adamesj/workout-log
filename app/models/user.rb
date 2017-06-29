@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :exercises
+  has_many :friendships
+  has_many :friends, through: :friendships, class_name: "User" #friends is an alias for users
 
   def full_name
     "#{first_name} #{last_name}"
@@ -27,5 +29,13 @@ class User < ApplicationRecord
       # if more than one name is entered, the code above will be executed
       # the order of the names entered do not matter
     end
+  end
+
+  def follows_or_same?(new_friend)
+    friendships.map(&:friend).include?(new_friend) || self == new_friend
+    # friendships returns an array, then we map over the array
+    # and determine all of the friends
+    # then check if the new_friend passed is included in the list
+    # or test if the current user is a new friend
   end
 end

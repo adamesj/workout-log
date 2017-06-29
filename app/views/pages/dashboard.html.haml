@@ -8,6 +8,9 @@
         List of Members
       = will_paginate @members, renderer: BootstrapPagination::Rails, class: "pull-left paginate"
   .row
-    .col-md-10.well.member
-      - @members.each do |member|
+    - @members.each do |member|
+      .col-md-10.well.member
         %p= member.full_name
+        - if current_user
+          = link_to "Follow", friendships_path(friend_id: member.id), method: :post, class: 'btn btn-success pull-right' unless current_user.follows_or_same?(member)
+
