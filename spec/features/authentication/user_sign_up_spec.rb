@@ -10,6 +10,11 @@ RSpec.feature "New user session" do
     fill_in "user[password_confirmation]", with: "banana123"
     click_button "Sign up"
     expect(page).to have_content("Welcome! You have signed up successfully.")
+
+    user = User.last
+    room = user.room
+    room_name = user.full_name.split.join('-')
+    expect(room.name).to eq(room_name)
   end
 
   scenario "with no credentials" do
