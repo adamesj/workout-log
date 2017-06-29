@@ -45,7 +45,7 @@ RSpec.feature "Listing exercises" do
 
     click_link "My Lounge"
 
-    expect(page).to have_content('No Workouts Yet')
+    expect(page).to have_content('')
   end
 
   scenario "shows a list of user's friends" do
