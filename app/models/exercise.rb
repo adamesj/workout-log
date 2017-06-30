@@ -3,5 +3,5 @@ class Exercise < ApplicationRecord
   validates :duration, numericality: { only_integer: true, greater_than: 0 }
   validates :workout_details, presence: true, length: { minimum: 3, maximum: 200 }
   validates :activity_date, presence: true
-  validates_with DateValidator
+  #validates_with DateValidator
 end

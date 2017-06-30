@@ -1,0 +1,5 @@
+%div{:class => content_for?(:whole_page) ? 'container-fluid' : 'container'}
+  .row
+    .col-md-12
+      = yield
+      = yield :whole_page

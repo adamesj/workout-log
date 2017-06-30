@@ -1,5 +1,5 @@
-.container
-  .col-md-8.col-xs-12
+- content_for(:whole_page) do
+  .col-md-7.col-xs-12
     - if current_user.exercises.present?
       %table.table
         %thead
@@ -16,16 +16,15 @@
               %td= link_to 'Show', [current_user, exercise]
               %td= link_to 'Edit', [:edit, current_user, exercise]
               %td= link_to 'Delete', [current_user, exercise], method: :delete, data: { confirm: 'Are you sure?' }
+      = link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success"
+      = content_tag :div, "", id: "chart", data: { workouts: @exercises }
     - else
       .alert.alert-danger.message-font.text-center
         No workouts logged
-      = link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success"
-
-    = content_tag :div, "", id: "chart", data: { workouts: @exercises }
 
   .col-md-5.col-xs-12
     #chat-window.col-md-12
-      #header.text-center Channel: #{current_room.name}
+      %header.text-center Channel: #{current_room.name}
 
       .col-md-2#followers
         - @followers.each do |follower|
@@ -38,7 +37,7 @@
 
       #form-box
         = form_for @message, remote: true do |f|
-          = f.text_field :body, id: 'message-field', class: 'form-control pull-left'
+          = f.text_field :body, id: 'message-field', class: 'form-control'
           = f.submit 'Post', class: 'btn btn-default', id: 'post-btn'
 
     %h1.text-center
@@ -49,4 +48,4 @@
         = link_to friend.full_name, friendship_path(current_user.current_friendship(friend))
       .col-md-3
         .btn-unfollow
-          = link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success link"
+          = link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success btn-sm link"
