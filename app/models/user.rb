@@ -7,12 +7,13 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  after_create :create_chatroom
-
   has_many :exercises
   has_many :friendships
   has_many :friends, through: :friendships, class_name: "User" #friends is an alias for users
   has_one :room
+  has_many :messages
+
+  after_create :create_chatroom
 
   def full_name
     "#{first_name} #{last_name}"

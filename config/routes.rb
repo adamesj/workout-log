@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   get '/home', to: 'pages#home'
 
-  resources :pages, only: [:search] do
+  resources :pages, only: [:dashboard] do
     collection do
       post :search, to: 'pages#search'
     end
@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :friendships, only: [:show, :create, :destroy]
+  resources :messages, only: [:create]
 end

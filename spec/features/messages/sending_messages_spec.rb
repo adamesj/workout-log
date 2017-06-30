@@ -31,7 +31,7 @@ RSpec.feature "Sending a message" do
     click_link "My Lounge"
     expect(page).to have_content(@room_name)
 
-    fill_in "message_field", with: "Hello"
+    fill_in "message[body]", with: "Hello"
     click_button "Post"
 
     expect(page).to have_content("Hello")
