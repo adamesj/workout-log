@@ -10,6 +10,7 @@ class ExercisesController < ApplicationController
     @message = Message.new
     @messages = current_room.messages if current_room
     @followers = Friendship.where(friend_id: current_user.id)
+    @members = User.paginate(page: params[:page], per_page: 3)
   end
 
   def show
