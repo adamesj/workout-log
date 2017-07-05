@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root 'pages#home', page: "home"
   get '/home', to: 'pages#home'
 
-  resources :pages, only: [:dashboard] do
+  resources :pages, only: [:show] do
     collection do
-      post :search, to: 'pages#search'
+      get :search, to: 'pages#search'
     end
   end
 

@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def search
-    @members = User.search_by_name(params[:search_name]).paginate(page: params[:page])
+    @members = User.search_by_name(params[:search_name])
   end
 end

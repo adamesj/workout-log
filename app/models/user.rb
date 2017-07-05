@@ -23,7 +23,7 @@ class User < ApplicationRecord
     names_array = name.split(' ') # the string entered gets split into an array
 
     if names_array.size == 1 # if only a first name is entered
-      where('first_name LIKE ? or last_name LIKE ?', # look up names where the first name is similar or last name is similar from the array
+      where('lower(first_name) LIKE lower(?) or lower(last_name) LIKE lower(?)', # look up names where the first name is similar or last name is similar from the array
         "%#{names_array[0]}%", "%#{names_array[0]}%").order(:first_name) # then order by the first name
     else
       where('first_name LIKE ? or first_name LIKE ? or last_name LIKE ?
