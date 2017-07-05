@@ -15,7 +15,8 @@ RSpec.feature "Following a user" do
   end
 
   scenario "with existing name returning all users" do
-    visit "/dashboard"
+    visit "/"
+    click_link "My Lounge"
 
     expect(page).to have_content(@user1.full_name)
     expect(page).to have_content(@user2.full_name)

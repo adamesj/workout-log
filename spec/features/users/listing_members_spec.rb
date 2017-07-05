@@ -11,10 +11,12 @@ RSpec.feature "Listing members" do
                             last_name:   Faker::Name.last_name,
                             email:       Faker::Internet.email,
                             password:    Faker::Internet.password)
+    login_as(@user1, scope: :user)
   end
 
   scenario "shows a list of registered members" do
-    visit "/dashboard"
+    visit "/"
+    click_link "My Lounge"
 
     expect(page).to have_content("List of Members")
     expect(page).to have_content(@user1.full_name)

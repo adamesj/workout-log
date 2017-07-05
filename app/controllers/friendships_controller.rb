@@ -11,7 +11,7 @@ class FriendshipsController < ApplicationController
     params[:user_id] = current_user.id
 
     Friendship.create(friendship_params) unless current_user.follows_or_same?(friend)
-    redirect_to dashboard_path
+    redirect_to user_exercises_path(current_user)
   end
 
   def destroy
