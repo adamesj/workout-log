@@ -10,6 +10,8 @@ path {
   shape-rendering: crispEdges;
 }
 
+/* Exercise dashboard */
+
 #chat-window {
   border: 1px solid #76C95B;
   margin: 15px 0;
@@ -32,6 +34,10 @@ path {
 #message-field {
   width: 90%;
   display: inline-block;
+}
+
+#username-msg-display {
+  color: #337ab7;
 }
 
 .message-body {
@@ -71,4 +77,9 @@ hr.msg {
 
 .btn-unfollow {
   padding: 5px 10px;
+}
+
+/* Form styling */
+margin {
+
 }

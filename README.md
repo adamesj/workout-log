@@ -1,24 +1,16 @@
-# README
+# Workout-log
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was created using Behaviroal Drive Development. The tools for testing include rspec,
+capybara, and selenium webdriver to simulate real user interaction.
 
-Things you may want to cover:
+Features included:
 
-* Ruby version
+* Users can log their workouts, including the time (in minutes), description of the exercise, and the date.
 
-* System dependencies
+* A D3 (jQuery) chart will display the user's workout progress over the last 7 days.
 
-* Configuration
+* User's can follow/unfollow other users and view each other's progress.
 
-* Database creation
+* Users can chat in real time provided through Action Cable.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Users can search for other users as well.

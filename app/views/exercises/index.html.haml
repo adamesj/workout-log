@@ -18,19 +18,17 @@
     = link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success"
     = content_tag :div, "", id: "chart", data: { workouts: @exercises }
   - else
-    .alert.alert-danger.message-font.text-center
-      No workouts logged
     = link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success"
 
 .col-md-5.col-xs-12
   #chat-window.col-md-12
     %header.text-center Channel: #{current_room.name}
 
-    .col-md-2#followers
+    .col-md-3#followers
       - @followers.each do |follower|
         = link_to follower.user.full_name, user_exercises_path(current_user, roomId: follower.user.room.id), class: 'followers'
 
-    .col-md-10#messages-box
+    .col-md-9#messages-box
       #chat-box{ data: {room_id: current_room.id}}
         - @messages.each do |message|
           = render partial: 'shared/message', locals: { message: message }

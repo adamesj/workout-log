@@ -1,5 +1,5 @@
 .container
-  %h1.text-center
-    New Exercise for #{current_user.full_name}
-
+  .row
+    .col-md-12
+      %h2.text-center New Exercise for #{current_user.full_name}
   = render 'form'

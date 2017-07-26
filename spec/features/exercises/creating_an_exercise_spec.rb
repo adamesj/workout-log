@@ -41,6 +41,5 @@ RSpec.feature "Create a new exercise" do
     expect(page).to have_content "Oops! Unable to create exercise."
     expect(page).to have_content "Duration must be greater than 0"
     expect(page).to have_content "Workout details is too short (minimum is 3 characters)"
-    expect(page).to have_content "Activity date can't be in the past"
   end
 end
