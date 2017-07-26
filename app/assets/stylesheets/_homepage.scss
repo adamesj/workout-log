@@ -1,6 +1,6 @@
 #homepage_header {
-  background: linear-gradient(rgba(202,228,219, 0.25), rgba(202,228,219, 0.25)),
-                rgba(202,228,219, 0.25) url("/assets/homepage_hdr.jpg");
+  background: linear-gradient(rgba(202,228,219, 0.50), rgba(202,228,219, 0.50)),
+                rgba(202,228,219, 0.50) url("/assets/homepage_hdr.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -16,5 +16,5 @@
   display: block;
   text-align:center;
   position: relative;
-  top: 200px;
+  top: 180px;
 }
